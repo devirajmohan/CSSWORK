@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport tag is essential for media queries to work --><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        /* Base styles for the product card */
+        .product-card {
+            max-width: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 16px;
+            margin: 20px; /* Default margin */
+            text-align: left; /* Default text alignment */
+            
+            /* Added transition for a smooth color change in landscape mode */
+            transition: background-color 0.3s ease;
+        }
+
+        /* 1. Class for the image with a 2px solid black border */
+        .product-image {
+            width: 100%; /* Make image responsive */
+            height: auto;
+            border: 2px solid black;
+            
+            /*  Round ONLY top-left and bottom-right corners */
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            
+          
+        }
+
+        /* Styling for the product name */
+        .product-card h2 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for the button */
+        .product-card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        /* --- 3. Responsive styles for small screens --- */
+        @media (max-width: 600px) {
+            .product-card {
+                /* Center-align the card itself */
+                margin-left: auto;
+                margin-right: auto;
+                
+                /* Center-align the text inside the card */
+                text-align: center;
+            }
+
+            /* Reduce font sizes */
+            .product-card h2 {
+                font-size: 1.3rem;
+            }
+            .product-card button {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* --- 4. Responsive styles for landscape orientation --- */
+        @media (orientation: landscape) {
+            .product-card {
+                background-color: lightblue;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The Product Card --><div class="product-card">
+        
+        <!-- 1. The image with the required class --><img class="product-image" src="eco-friendlywaterbottle.webp" alt="A sample product">
+        
+        <h2>Eco-Friendly Water Bottle</h2>
+        
+        <button>Buy Now</button>
+    
+    </div>
+
+</body>
+</html>
+
