@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Announcement</title>
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* 1. Heading: Centered at the top */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* 3. Notice Box: With position: relative for the badge */
+        .notice-box {
+            /* position: relative is required for absolute positioning of the child .badge */
+            position: relative;
+            
+            background-color: #ffffff; /* Light background */
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            
+            /* 4. Padding: Provides vertical (and horizontal) spacing for the content */
+            padding: 25px;
+            
+            /* Sizing and centering the box itself on the page */
+            max-width: 700px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+
+            /* 5. Overflow Handling:
+               - 'overflow: auto' makes the box scrollable if content exceeds max-height.
+               - It also serves to "clear the float" (Requirement 6) by containing
+                 the floated image, so no separate clearing div is needed.
+            */
+            overflow: auto;
+            max-height: 250px; /* A fixed height to demonstrate scrolling */
+        }
+
+        /* 2. Floating Image: Square, floated left */
+        .notice-box img {
+            float: left;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            
+            /* Adds spacing so text doesn't touch the image */
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* 7. Decorative Element: Positioned absolutely */
+        .badge {
+            position: absolute;
+            top: 15px;       /* Relative to the .notice-box padding */
+            right: 15px;     /* Relative to the .notice-box padding */
+            
+            background-color: #d9534f; /* Red color */
+            color: white;
+            padding: 4px 8px;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Basic styling for the text content */
+        .notice-box h3 {
+            margin-top: 0;
+            color: #444;
+        }
+        
+        .notice-box p {
+            /* 3. Text Wrapping: This happens automatically because the image is floated */
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Centered Heading -->
+    <h1>Important Notice</h1>
+
+    <!-- 3. The Notice Box -->
+    <div class="notice-box">
+        
+        <!-- 7. Decorative Badge -->
+        <span class="badge">Urgent</span>
+
+        <!-- 2. Floating Side Image -->
+        <img src="schoolicon.webp" alt="School Icon">
+
+        <!-- 3. Text Content -->
+        <h3>Parent-Teacher Meetings</h3>
+        <p>
+            This is the first important notice. All parents are requested to attend the upcoming parent-teacher meetings scheduled for next week. Please check your email for the schedule and to book your time slot. Your participation is crucial for your child's progress.
+        </p>
+
+        <h3>Annual Sports Day</h3>
+        <p>
+            Get ready! The Annual Sports Day is just around the corner. We are adding this extra text to ensure that the content is long enough to overflow the box's maximum height. This will demonstrate the scrollbar appearing as requested in requirement 5. We encourage all students to participate in at least one event. Let's make this day a huge success!
+        </p>
+        
+        <h3>Library Closure</h3>
+        <p>
+            The school library will be closed this Friday for system upgrades. Please return all borrowed books by Thursday. We apologize for any inconvenience this may cause.
+        </p>
+
+    </div>
+
+</body>
+</html>
