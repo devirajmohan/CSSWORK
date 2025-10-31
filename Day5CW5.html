@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Demo</title>
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* --- Section 1: Paragraph Styling --- */
+
+        /* 2. Make only the first line of each paragraph bold */
+        /* We use the ::first-line pseudo-element */
+        .styled-section p::first-line {
+            font-weight: bold;
+        }
+
+        /* 3. Make only the first letter red and larger */
+        /* We use the ::first-letter pseudo-element */
+        .styled-section p::first-letter {
+            color: red;
+            font-size: larger; /* This font size is larger */
+            float: left; /* Helps the large letter sit nicely */
+            padding-right: 2px;
+        }
+
+        /* --- Section 2: Heading Styling --- */
+
+        /* 5. Color only the second heading green */
+        /* 9. We use the Adjacent Sibling Combinator (+)
+           This selects an <h3> that immediately follows another <h3> */
+        h3 + h3 {
+            color: green;
+        }
+
+        /* --- Section 3: Link List Styling --- */
+
+        /* 7. Make the first link in the list red */
+        /* We use the :first-child pseudo-class to select the first <li>
+           and the Descendant Combinator (space) to select the <a> inside it. */
+        .link-list li:first-child a {
+            color: red;
+        }
+
+        /* 8. Link states */
+        /* Normal, unvisited links */
+        a:link {
+            color: blue;
+        }
+
+        /* Visited links */
+        a:visited {
+            color: purple;
+        }
+
+        /* Hovered links */
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. A section with a heading and two paragraphs -->
+    <section class="styled-section">
+        <h2>Article Section</h2>
+        <p>This is the first paragraph. The first line of this paragraph should be bold, and the very first letter should be red and larger. The rest of the text will flow around it normally.</p>
+        <p>This is the second paragraph. It follows the exact same styling rules as the first. The first line is bold, and the first letter is red and enlarged, demonstrating that the rule applies to both paragraphs.</p>
+    </section>
+
+    <hr> <!-- Just a separator -->
+
+    <!-- 4. A container with two headings (h3) -->
+    <div>
+        <h3>First Heading (Normal)</h3>
+        <h3>Second Heading (Green)</h3>
+    </div>
+
+    <hr> <!-- Just a separator -->
+
+    <!-- 6. A short list (ul) inside a div -->
+    <div class="link-list">
+        <ul>
+            <li><a href="#">First Link (Red)</a></li>
+            <li><a href="#">Second Link (Blue)</a></li>
+            <li><a href="#">Third Link (Blue)</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
